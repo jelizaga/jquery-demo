@@ -1,26 +1,12 @@
-/*
-// Select element from the DOM
-$('selector');
-
-// Assign event
-$('selector').on('specify-event', function(){});
-
-// Create HTML element
-var li = $('<li>');
-
-// Add to page
-$('ol').append(li);
-
-// Or
-li.appendTo($('ol'));
-*/
-
+// Handling the buttons.
 $("button").on("click", function() {
 
+    // Establishing buttons as variables.
     var thisButton = this.id;
     var selectorToModify = $("#selector").val();
     var contentToApply = $("#newContent").val();
 
+    // Establishing individual actions for each button.
     if (thisButton == "change-content") {
         $(selectorToModify).val(contentToApply);
     } else if (thisButton == "add-at-end") {
@@ -42,6 +28,7 @@ $("button").on("click", function() {
             $(selectorToModify).wrap("<div class='hidden'></div>");
         }
     } else {
+        // In the event of pressing a button that isn't specified herein.
         alert("What button did you press??");
     }
 
